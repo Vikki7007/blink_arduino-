@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>QR Code Styling</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/qr-border-plugin@0.0.8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/qr-code-styling@1.6.0-rc.1"
+    ></script>
+    <script type="text/javascript" src="https://unpkg.com/qr-border-plugin"></script>
+
+  </head>
+  <body>
+    <div id="canvas"></div>
+    <script type="text/javascript">
+      const options = {
+        shape: "circle",
+        type: "svg",
+        width: 500,
+        height: 500,
+        margin: 70,
+        data: "test",
+        //image:
+          //"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAmVBMVEULsrv////R6esLsb0xtr3W7O4ArbR20Na95+zT5+vP6uvR6u7///3b7+/8//+Q0NAAq7YArr6z5Od3ydEctLnw//8ApbDA5udWx8yg6euk3eKI1+GW4+dTwMZNvL606ugytMF1ycu07PWt7O7M7vqW2OGZ2t2AyNZnyc86vsg4ubnc+fQAprno9fVlw8XH7uoAqKip3tmD1tMQyRjLAAAD7UlEQVR4nO2Z7VajMBBAg5NGxUhDm1K3u7TFXVm19sv3f7gdKBlowV9bwp6zc/VULenhOhkmQxCCYRiGYRiGYRiGYRiGYRiGYRiGYf5njFGxUYCvMLSKA56+LRZP36ex/JEO7eLA4CzvUrUK17ej7F+JFODX8zqZTLLFZOpJqvM0cP6rfZbmZ/rrJf/dmwUU3xXKdkmBiCtKKRAraVbyW5rf9hUpENm4RnYPeZ1WvBVS5h1sulZx5+ArGAHEZhbULAx0/PfyblRxq6AYALb4ZNfQ60iprOGkZ4d2VgFK3dyEYXh/46TKT0KPUmFTKtiZzkg93CD3IUWqsupHSkDanL0g2H90DGtK9eJxIWXyIGpKbZdDS2H4zXmggiDvmD+fUgDW7C6c9CZp54pfKfjYn89ekepDSwlM85NUFDm7lRKXLYlfKZW7CEUYo/Kn3r7by1B5lnrU7qo7ajeP49aJ/UqlVXwCvbKR88NUH1JKzXU1acEu2TupIL3sFXxKxXLrpmyjDK2BenG4SCqvxXNMdeCIZ3ZlFFP9ogHwKIVp7jSiHcR27v7SGQwkheddntJcYxlXuApmLqn0PoGzDsajVGMtPhYLXkLLYCTjs7EepSQVqUiW19uRQnVUZ1b+cgoyV5l0WLRuENeL86MdKKeSPdWAsTn1kSGVqp0dQAoVDAUqeju13Wah3VvzpHn9+ZEqJiunDLpzZ5JRZaUj2awK3qTEiDIoO80V2GRLa2Fu/EuJeOpmL8ICXpmaKaXZg/IuhUVp4mYqmFdJXZTTLZWqpX8pUBG1wZm7VcBQ7d38BaukHu1JynxS9mzr7AFsFdzbM1Gnuq+cqu+LG9sHgEsNlarPmKw8RSqlyYtSaEq5VgFLle9ImSMFKpTNLTHYke0sFX6lDjRLOj803q9XaV2WKo9SNs5cPdCzN9FY5upCr/GQAetNCgRt/+ggTKDRpWBRkDSxQUbLj4dIwbLe1ciMPcspOFCXpefK19UHZcvpzjtbtwa8aFdXZ7K6gfAgFSebOhhxa0C6pS7Zrcr9SwnsMN1Zo6lpHcc7VFfWN8qTFJ52Qhk1U5d36NjAZE5KY2EVnqQktQLBpC0lRGOtro73P30x3RdrvevY4AVDS01Upvppy7oApVrTfRVssqEi9Sg7ds2bS03waUqpOYbp/h5fsvaFcQ1UWkUJi/rR2NZxvDrft/p0HFO9vP7kfFRs7qNY1kOkihup8SOx7n6SYXIaMSqeM4JcPN9NSl57iFTZjRS7h6rky4cG9nS8yuoiVsIWfPHo7e+tQLhnGOXDjK5B1ZMXpwznfzIMwzAMwzAMwzAMwzAMwzAMwzAMwwzEH9ZfPzn/HLeCAAAAAElFTkSuQmCC",
+        dotsOptions: {
+          type: "dots",
+          color: "#000",
+        },
+        backgroundOptions: {
+          round: 1,
+          color: "#FFFF",
+        },
+        cornersSquareOptions: {
+          type: "rounded",
+        },
+        cornersDotOptions: {
+          type: "rounded",
+        },
+        imageOptions: {
+          crossOrigin: "anonymous",
+          margin: 20,
+        },
+      };
+
+      const extensionOptions = {
+        round: 1,
+        thickness: 60,
+        color: "#000000",
+        decorations: {
+          top: {
+            type: "text",
+            value: "HELLO I AM QR-CODE",
+            style: "font: 30px sans-serif; fill: #D5B882;",
+          },
+          bottom: {
+            type: "text",
+            value: "DON'T SCAN ME",
+            style: "font: 30px sans-serif; fill: #D5B882;",
+          },
+        },
+        borderInner: {
+          color: "#000000",
+          thickness: 10,
+        },
+        borderOuter: {
+          color: "#000000",
+          thickness: 10,
+        },
+      };
+
+      const qrCode = new QRCodeStyling(options);
+
+      // Apply the border extension
+      qrCode.applyExtension(QRBorderPlugin(extensionOptions));
+
+      // Set the license key (replace 'key' with your actual key)
+      QRBorderPlugin.setKey("key");
+
+      qrCode.append(document.getElementById("canvas"));
+    </script>
+  </body>
+</html>
